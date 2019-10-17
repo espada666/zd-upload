@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Zd\\wechat\\": "src/"
+            "Zd\\upload\\": "src/"
         }
     }
 }
