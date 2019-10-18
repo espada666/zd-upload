@@ -9,6 +9,8 @@ namespace Zd\upload\core;
 
 use Zd\upload\core\BaseUpload;
 
+use Zd\upload\request\Curl;
+
 use OSS\OssClient;
 
 class Oss extends BaseUpload
@@ -35,8 +37,9 @@ class Oss extends BaseUpload
     {
         $fp = Curl::get($url);
         $path = $path . '/' . $this->createFileName() . '.' . $this->getExtName($url);
-        $result = $this->client->putObject($this->config['bucket'], $path, $fp);
-        return $result ? true : false;
+        var_dump($path);
+        //$result = $this->client->putObject($this->config['bucket'], $path, $fp);
+        //return $result ? true : false;
     }
 
     /**
@@ -46,7 +49,7 @@ class Oss extends BaseUpload
      * @param string $path
      * @return boole
      */
-    public function uploadByFileObject($fp, $path)
+    public function uploadByFileObject($fp, $path, $extName = 'jpg')
     {
 
     }
